@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Franklin Gothic Medium";
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "navbar navbar"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 100px 4fr;
+  grid-template-rows: auto 1fr 100px;
+  max-height: 100vh;
+  text-align: center;
+  /* justify-content: space-evenly; */
+}
+
+nav {
+  grid-area: navbar;
+  background-color: rgba(37, 82, 123, 255);
+  display: flex;
+  flex-direction: column;
+}
+.top-menu {
+  width: 25%;
+}
+.fila {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+/* h1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+aside {
+  grid-area: sidebar;
+}
+
+main {
+  grid-area: main;
+  height: 90vh;
+}
+
+footer {
+  grid-area: footer;
+}
+
+img {
+  /* height: 150px; */
+  max-height: 100%;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: end;
+}
+
+li {
+  display: inline;
+  margin: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: red;
+}
+
+.box {
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+}
+
+.card-box {
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 3fr));
+  gap: 0 10px;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* grid-template-rows: repeat(2fr); */
+  /* grid-template-rows: auto auto auto auto; */
+}
+
+button {
+  height: 50px;
+  justify-content: center;
+  margin-top: 10px;
+  background-color: rgba(37, 82, 123, 255);
+}
+.colorazul {
+  background-color: rgba(37, 82, 123, 255);
+}
