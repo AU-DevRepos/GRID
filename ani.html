@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menú Lateral</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Estilos básicos para el botón del menú */
+      .menu-button {
+        font-size: 30px;
+        cursor: pointer;
+        margin: 20px;
+      }
+
+      /* Estilos para el menú lateral */
+      .side-menu {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: width 0.5s;
+        padding-top: 60px;
+        color: white;
+        z-index: 1;
+      }
+
+      /* Estilos para los enlaces dentro del menú lateral */
+      .side-menu a {
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: color 0.6s;
+      }
+
+      /* Cambia el color del enlace al pasar el ratón */
+      .side-menu a:hover {
+        color: #f1f1f1;
+      }
+
+      /* Estilo para abrir el menú */
+      .side-menu.open {
+        width: 250px;
+      }
+
+      /* Estilos para el botón de cierre dentro del menú */
+      .side-menu .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu-button" id="menuButton" onclick="toggleMenu()">☰</div>
+    <div class="side-menu" id="sideMenu">
+      <a
+        href="javascript:void(0)"
+        class="closebtn"
+        id="closeButton"
+        onclick="toggleMenu()"
+        >×</a
+      >
+      <a href="#">Inicio</a>
+      <a href="#">Servicios</a>
+      <a href="#">Contacto</a>
+    </div>
+    <script>
+      function toggleMenu() {
+        const sideMenu = document.getElementById("sideMenu");
+        const menuButton = document.getElementById("menuButton");
+        const closeButton = document.getElementById("closeButton");
+
+        sideMenu.classList.toggle("open");
+        if (sideMenu.classList.contains("open")) {
+          menuButton.style.display = "none";
+          closeButton.style.display = "block";
+        } else {
+          menuButton.style.display = "block";
+          closeButton.style.display = "none";
+        }
+      }
+
+      // Inicializar el botón de cierre como oculto
+      document.getElementById("closeButton").style.display = "none";
+    </script>
+  </body>
+</html>
